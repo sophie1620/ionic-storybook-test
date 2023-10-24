@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ExploreContainerComponent {
 
-  @Input() name?: string;
+  blue = '#005b96';
+
+  name = 'ionic button';
 
 }
