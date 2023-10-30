@@ -1,0 +1,2 @@
+/*! For license information please see 7955.4705e3b5.iframe.bundle.js.LICENSE.txt */
+"use strict";(globalThis.webpackChunkionic_storybook=globalThis.webpackChunkionic_storybook||[]).push([[7955],{"./node_modules/@ionic/core/dist/esm-es5/dir-912e3e13.js":(__unused_webpack_module,__webpack_exports__,__webpack_require__)=>{__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,{i:()=>isRTL});var isRTL=function(r){return r&&""!==r.dir?"rtl"===r.dir.toLowerCase():"rtl"===(null===document||void 0===document?void 0:document.dir.toLowerCase())}}}]);

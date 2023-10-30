@@ -1,6 +1,18 @@
-<div id="container">
-  <strong>{{ name }}</strong>
-  <!-- <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+<div id="container" style="border: 1px solid red;" [class.dark-mode]="isDarkMode">
 
-    <app-back-button [color]="blue"></app-back-button>
+  <ion-row>
+    <ion-button 
+      (click)="darkMode()"
+    >{{isDarkMode ? 'Light Mode' : 'Dark Mode'}}</ion-button>
+  </ion-row>
+
+  <ion-row>
+    <app-back-button 
+    [btnType]="color" 
+      [btnCTA]="btnCTA"
+    ></app-back-button>
+  </ion-row>
+  
+    <app-sample-card [darkMode]="isDarkMode"></app-sample-card>
+    
 </div>

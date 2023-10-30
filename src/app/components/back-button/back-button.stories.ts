@@ -5,20 +5,40 @@ import { IonButton, IonicModule } from '@ionic/angular';
 import { importProvidersFrom } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentsModule } from '../components.module';
+import { SharedModule } from 'src/app/shared.module';
 
 
 const meta: Meta<BackButtonComponent> = {
   title: 'App/BackButtonComponent',
   component: BackButtonComponent,
+  parameters: {
+    layout: 'centered'
+  },
+  args: {
+    variant: 'primary',
+    btnCTA: 'Go back',
+  },
   render: (args: BackButtonComponent) => ({
     props: {
       ...args,
     },
   }),
   argTypes: {
-    color: {
-      control: { type: 'color' }
-    }
+    variant: { 
+      control: 'select', 
+      options: ['primary', 'secondary'] },
+    btnCTA: {
+      control: 'text' 
+    }, 
+    fill: {
+      control: 'radio',
+      options: ['clear', 'solid', 'outline'],
+    },
+    size: {
+      control: 'radio',
+      options: ['small', 'default', 'large'],
+    },
+    disabled: { control: 'boolean' },
   },
   decorators: [
     applicationConfig({
@@ -34,14 +54,13 @@ const meta: Meta<BackButtonComponent> = {
     }),
     moduleMetadata({
       declarations: [BackButtonComponent],
-      imports: [ComponentsModule],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }),
     (storyFn) => {
       const story = storyFn();
       return story;
     },
-    componentWrapperDecorator((story) => `<ion-app>${story}</ion-app>`),
+    componentWrapperDecorator((story) => `<ion-app style="margin: 100px">${story}</ion-app>`), 
   ],
 };
 
@@ -49,25 +68,14 @@ export default meta;
 type Story = StoryObj<BackButtonComponent>;
 
 export const Primary: Story = {
-  args: {
-    color: 'orange'
-  },
+
 };
 
 export const Secondary: Story = {
   args: {
-    color: 'black'
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    color: 'green',
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    color: 'red',
+    btnType: 'warning',
+    btnCTA: 'Warning!',
+    fill: 'outline',
+    size: 'small'
   },
 };

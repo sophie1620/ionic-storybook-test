@@ -1,0 +1,15 @@
+ion-button {
+  --border-radius: 4%;
+  width: 128px;
+  height: 48px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  &:hover {
+    --border-color: secondary;
+  }
+}
+
+ion-button:hover {
+  --background-color: red;
+}

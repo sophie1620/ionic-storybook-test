@@ -5,10 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { BackButtonComponent } from './back-button/back-button.component';
 import { FormsModule } from '@angular/forms';
+import { SampleCardComponent } from './sample-card/sample-card.component';
 
 @NgModule({
   declarations: [
     BackButtonComponent,
+    SampleCardComponent
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     BackButtonComponent,
+    SampleCardComponent
   ],
 })
 export class ComponentsModule { }
